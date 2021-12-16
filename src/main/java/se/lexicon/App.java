@@ -10,8 +10,13 @@ public class App
 
     public static void main( String[] args )
     {
-        primitives();
-        assignmentOperator();
+//        primitives();
+//        assignmentOperator();
+//        guessANumber();
+//        whatIsYourRole();
+
+//        strings();
+        objects();
     }
 
     public static int nextId(){
@@ -40,5 +45,103 @@ public class App
 
         System.out.println(result);
     }
+
+
+    public static void guessANumber(){
+        int numberToGuess = 55;
+        int myGuess = 55;
+
+        if (myGuess > numberToGuess){
+            System.out.println("Number is to High! try a lower number!");
+        } else if (myGuess < numberToGuess){
+            System.out.println("Number is to Low! try a higher number!");
+        } else{
+            System.out.println("You have guess it! number was " + numberToGuess);
+        }
+    }
+
+
+    public static void whatIsYourRole(){
+
+        // Guest, Employee, Manger, CEO
+        String role = "Manager";
+
+        switch(role){
+            case "Guest":
+                System.out.println("Hello and Welcome to the office let me show you around!");
+                break;
+            case "Employee":
+                System.out.println("Welcome back! Here are today's tasks.");
+                break;
+            case "Manager":
+                System.out.println("Hello, Here is the report from yesterday!");
+                break;
+            case "CEO":
+                System.out.println("Hello, Here is the report of the company's health ");
+                break;
+            default:
+                System.out.println("Hmm.. not sure what role you have. Welcome anyway!");
+
+        }
+
+    }
+
+    public static void strings(){
+
+        String name = "Simon";
+//        name = name.concat(" Elbrink");
+        name = name + " Elbrink";
+        System.out.println(name);
+
+        String firstName = "Simon";
+        String lastName = "Elbrink";
+        int age = 24;
+        String hobby = "Programming";
+
+        String sentence = "Hello my name is " + firstName + " " + lastName + " and I'm " + age + " and interesting in " + hobby;
+
+        System.out.println(sentence + "!");
+
+    }
+
+    public static void objects(){
+
+        Car volvo = new Car();
+
+        volvo.brand = "Volvo";
+        volvo.ownerName = "Susanne";
+        volvo.color = "red";
+        volvo.doors = 4;
+        volvo.weightInTons = 1.5;
+
+        System.out.println("Car{ " + volvo.brand + ", " + volvo.color + ", " + volvo.weightInTons + ", "+ volvo.ownerName + ", " + volvo.doors + "}");
+
+        System.out.println(volvo.getInformation());
+
+
+        Car bmw = new Car();
+
+        bmw.brand ="bmw";
+        bmw.color = "Black";
+        bmw.weightInTons = 1.0;
+
+        System.out.println(bmw.getInformation());
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
