@@ -20,7 +20,25 @@ public class App
 //        strings();
 //        objects();
 
-        scoreEvaluation();
+
+        boolean running = true;
+
+        while (running){
+
+            int score = UserInputUtil.getIntFromUser("What Score did you have: ");
+            String message = scoreEvaluation(score);
+            System.out.println(message);
+
+            String continueRunning = UserInputUtil.getStringFromUser("Do you want to continue?  (Y / N)");
+
+            if (continueRunning.equalsIgnoreCase("N")){
+                running = false;
+            }
+
+        }
+
+
+
     }
 
     static int nextId(){
@@ -139,20 +157,18 @@ public class App
      * almost there.”.
      * If score is below 55 it should print ”Sorry, You did not pass.”.
      */
-    public static void scoreEvaluation(){
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("What Score did you have: ");
-
-        int score = scanner.nextInt();
+    public static String scoreEvaluation(int score){
+        String message;
 
         if (score >= 65){
-            System.out.println("Hurray, You passed!");
+            message = "Hurray, You passed!";
         } else if (score >= 55){
-            System.out.println("You are almost there.");
+            message = "You are almost there.";
         }else {
-            System.out.println("You did not pass. :( ");
+            message = "You did not pass. :( ";
         }
+
+        return message;
     }
 
 
