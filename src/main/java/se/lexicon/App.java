@@ -21,9 +21,9 @@ public class App
 //        objects();
 
 
-        boolean running = true;
 
-        while (running){
+
+        while (true){
 
             int score = UserInputUtil.getIntFromUser("What Score did you have: ");
             String message = scoreEvaluation(score);
@@ -32,7 +32,7 @@ public class App
             String continueRunning = UserInputUtil.getStringFromUser("Do you want to continue?  (Y / N)");
 
             if (continueRunning.equalsIgnoreCase("N")){
-                running = false;
+                break;
             }
 
         }
