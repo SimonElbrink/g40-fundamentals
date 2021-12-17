@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -16,10 +18,12 @@ public class App
 //        whatIsYourRole();
 
 //        strings();
-        objects();
+//        objects();
+
+        scoreEvaluation();
     }
 
-    public static int nextId(){
+    static int nextId(){
         return ++number;
     }
 
@@ -86,7 +90,7 @@ public class App
 
     }
 
-    public static void strings(){
+    private static void strings(){
 
         String name = "Simon";
 //        name = name.concat(" Elbrink");
@@ -118,7 +122,6 @@ public class App
 
         System.out.println(volvo.getInformation());
 
-
         Car bmw = new Car();
 
         bmw.brand ="bmw";
@@ -126,10 +129,32 @@ public class App
         bmw.weightInTons = 1.0;
 
         System.out.println(bmw.getInformation());
-
-
-
     }
+
+    /**
+     * Make an integer called score and assign a value to it.
+     * Create an if-statement that should print out ”Hurray, You passed!”
+     * if the score is above or equals to 65.
+     * If the score is Equal or between 55 and 64 it should print ”You are
+     * almost there.”.
+     * If score is below 55 it should print ”Sorry, You did not pass.”.
+     */
+    public static void scoreEvaluation(){
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What Score did you have: ");
+
+        int score = scanner.nextInt();
+
+        if (score >= 65){
+            System.out.println("Hurray, You passed!");
+        } else if (score >= 55){
+            System.out.println("You are almost there.");
+        }else {
+            System.out.println("You did not pass. :( ");
+        }
+    }
+
 
 
 
